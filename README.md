@@ -17,7 +17,10 @@ This section lists step by step activities i will carry out for designing front-
     - Create Album Category component and place Album components in horizontal FlatList to make it scrollable horizontally
   - Crate Vertical FlatList to include all Albums in FlatList
 
-  * Album Screen
+- Album Screen
 
   - Song List component where all songs are listed in FlatList
   - Album Header component where Album details are placed on top of the playlist
+
+- Player Widget
+  - Player Widget plays current song and is displays in every screen

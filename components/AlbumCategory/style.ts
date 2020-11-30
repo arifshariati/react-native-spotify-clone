@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container:{
-        margin:10
+        margin:0
     },
     title:{
         fontSize:25,
