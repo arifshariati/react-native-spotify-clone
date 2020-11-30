@@ -4,11 +4,11 @@
     "slug": "react-native-spotify-clone",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/spotify-logo.png",
     "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle":"dark",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/spotify-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
