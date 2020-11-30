@@ -6,21 +6,21 @@ const styles = StyleSheet.create({
     container:{
         position:'absolute',
         bottom:78,
-        backgroundColor: Colors.light.tint,
+        
         width:'100%',
-        flexDirection:'row',
         borderBottomWidth:2,
         borderBottomColor:"#18AE68",
-        alignItems:'center'
     },
     rightContainer:{
         flexDirection:'row',
         justifyContent:'space-between',
-        flex:1
+        flex:1,
+        alignItems:'center'
     },
     nameContainer:{
         flexDirection:'row',
-        flex:0.75
+        flex:0.75,
+        alignItems:'center'
     },
     iconContainer:{
         flexDirection:'row',
@@ -38,9 +38,19 @@ const styles = StyleSheet.create({
         marginLeft:10
     },
     artist:{
-        fontSize:20,
+        fontSize:15,
         color:Colors.light.text,
         marginLeft:10
+    },
+    progress:{
+        height:10,
+        backgroundColor:"darkgray",
+        borderTopRightRadius:5,
+        borderBottomRightRadius:5,
+    },
+    row:{
+        flexDirection:'row',
+        backgroundColor: Colors.light.tint,
     }
 })
 
