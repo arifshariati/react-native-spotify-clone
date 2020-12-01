@@ -1,4 +1,4 @@
-import React,{ useState, useEffect} from 'react'
+import React,{ useState, useEffect, useContext } from 'react'
 import { View, Text, Image,TouchableOpacity } from 'react-native'
 import { AntDesign, FontAwesome } from '@expo/vector-icons'
 
@@ -12,16 +12,23 @@ import styles from './style';
 import AlbumDetails from '../../data/albumDetails';
 import Colors from '../../constants/Colors';
 
+import {API, graphqlOperation } from 'aws-amplify'
+import { getSong } from '../../amplify/graphql/queries'
+
+import { AppContext } from '../../AppContext'
 
 
 const song =AlbumDetails.songs[0];
 
 const PlayerWidget = () => {
 
+    const [song, setSong] = useState(null);
     const [sound,setSound]=useState<Sound | null>(null);
     const [isPlaying,setIsPlaying] = useState<boolean>(true);
     const [duration, setDuration] = useState<number | null>(null);
     const [position,setPosition] = useState<number | null>(null);
+
+    const { songId } = useContext(AppContext);
     
     const onPlayBackStatusUpdate = (status) =>{
 
@@ -49,9 +56,13 @@ const PlayerWidget = () => {
 
     useEffect(()=>{
 
-        playCurrentSong();
+        if(song){
+            
+            playCurrentSong();
 
-    },[])
+        }
+
+    },[song])
 
     const onPlayPausePress = async () => {
 
@@ -78,6 +89,35 @@ const PlayerWidget = () => {
         return (position/duration) * 100;
     }
 
+    useEffect(()=>{
+
+        const fetchSong = async () =>{
+
+            try{
+                const data = await API.graphql(
+                    graphqlOperation(
+                        getSong,{
+                            id:songId
+                        }
+                    )
+                );
+
+                setSong(data.data.getSong);
+            }
+            catch(error){
+                console.log(error.message);
+            }
+        }
+        fetchSong();
+
+    },[songId])
+
+
+    if(!song){
+
+        return null;
+        
+    }
     return (
         <View style={styles.container}>
             <View style={[styles.progress,{ width:`${getProgress()}%`}] } />
@@ -90,7 +130,7 @@ const PlayerWidget = () => {
                         <Text style={styles.artist}>{song.artist}</Text>
                     </View>
                     <View style={styles.iconContainer}>
-                        <AntDesign name="hearto" size={30} color={Colors.light.background} />
+                        {/* <AntDesign name="hearto" size={30} color={Colors.light.background} /> */}
                         <TouchableOpacity onPress={onPlayPausePress}>
                         <FontAwesome name={isPlaying ? 'pause' : 'play'} size={30} color={Colors.light.background} />
                         </TouchableOpacity>

@@ -8,10 +8,12 @@ const styles = StyleSheet.create({
     },
     image:{
         width:'100%',
-        height:150
+        height:150,
+        borderRadius:10
     },
     text:{
-        marginTop:10
+        marginTop:10,
+        fontWeight:'bold'
     }
 });
 

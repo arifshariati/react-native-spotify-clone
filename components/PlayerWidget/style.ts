@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
     nameContainer:{
         flexDirection:'row',
         flex:0.75,
-        alignItems:'center'
+        alignItems:'center',
+        flexWrap:'wrap'
     },
     iconContainer:{
         flexDirection:'row',
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
         marginLeft:10
     },
     progress:{
-        height:10,
+        height:5,
         backgroundColor:"darkgray",
         borderTopRightRadius:5,
         borderBottomRightRadius:5,

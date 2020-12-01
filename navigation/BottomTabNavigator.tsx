@@ -1,4 +1,4 @@
-import { Entypo, EvilIcons, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
+import { Entypo, EvilIcons, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -18,7 +18,8 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
+      >
 
       <BottomTab.Screen
         name="Home"
@@ -45,10 +46,10 @@ export default function BottomTabNavigator() {
       />
 
       <BottomTab.Screen
-        name="Premium"
+        name="Music"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <FontAwesome5 name="spotify" size={30} style={{ marginBottom: -3 }} color={color} />,
+          tabBarIcon: ({ color }) => <Ionicons name="ios-musical-notes" size={30} style={{ marginBottom: -3 }} color={color} />,
         }}
       />
 
@@ -64,12 +65,15 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={HomeScreen}
-        options={{ headerTitle: 'Home' }}
+        options={{ 
+          headerTitle: 'Home'}}
       />
       <TabOneStack.Screen
         name="AlbumScreen"
         component={AlbumScreen}
-        options={{ headerTitle: 'Album' }}
+        options={{ 
+          headerTitle: 'Album',
+        }}
       />
     </TabOneStack.Navigator>
   );
@@ -83,7 +87,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{ headerTitle: 'Not Implemented' }}
       />
     </TabTwoStack.Navigator>
   );

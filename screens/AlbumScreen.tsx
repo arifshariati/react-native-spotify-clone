@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, StyleSheet } from 'react-native'
 
 import { useRoute } from '@react-navigation/native'
 
@@ -51,7 +51,7 @@ const AlbumScreen = () => {
     }
 
     return (
-        <View>
+        <View style={styles.container}>
             <FlatList 
                 data={album.songs.items}
                 renderItem={({item}) => <SongListItem song={item} />}
@@ -63,3 +63,10 @@ const AlbumScreen = () => {
 }
 
 export default AlbumScreen;
+
+const styles = StyleSheet.create({
+
+    container:{
+        marginBottom:75
+    }
+})

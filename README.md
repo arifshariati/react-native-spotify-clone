@@ -24,3 +24,17 @@ This section lists step by step activities i will carry out for designing front-
 
 - Player Widget
   - Player Widget plays current song and is displays in every screen
+
+## Back-End
+
+For this project i have used aws amplify for the back-end and graphql. As per the app features, it does not have mutations rather only queries, and working with graphql in this project is relatively easy. At the moment mutation is done manually, which if required to expand the scope of the project, shall be done via web front-end though admin account only.
+
+To, set up aws amplify, you can read complete documentation on how to set up with expo for react-native.
+
+## Screenshots
+
+Though not much fancy UI however, still good to check it out and play around with songs.
+
+![home-screen](/screenshots/home-screen.png)
+![album-screen-english](/screenshots/album-screen-english.png)
+![album-screen-persion](/screenshots/album-screen-persian.png)

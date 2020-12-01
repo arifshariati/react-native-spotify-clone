@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TouchableOpacity, Alert } from 'react-native'
 
 import styles from './style'
 
@@ -14,10 +14,11 @@ const AlbumHeader = (props:AlbumHeaderProps) => {
 
     const onPress = () => {
 
+        Alert.alert("Play Functionality is not implemented yest. Istead press on any song from Song List to play music")
     }
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container} >
             <Image source={{uri:album.imageUri}} style={styles.image} />
             <Text style={styles.name}>{album.name}</Text>
             <View style={styles.creatorContainer}>
@@ -31,6 +32,7 @@ const AlbumHeader = (props:AlbumHeaderProps) => {
                 </View>
             </TouchableOpacity>
         </View>
+        
     )
 }
 

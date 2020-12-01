@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     },
     image:{
         width:75,
-        height:75
+        height:75,
+        borderRadius:7
     },
     title:{
         fontWeight:'bold',

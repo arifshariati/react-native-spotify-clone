@@ -4,12 +4,15 @@ import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
     container:{
-        alignItems:'center'
+        alignItems:'center',
     },
     image:{
         width:200,
         height:200,
-        margin:15
+        margin:15,
+        borderRadius:10,
+        borderWidth:3,
+        borderColor:"darkgray"
     },
     name:{
         fontSize:30,
@@ -20,11 +23,11 @@ const styles = StyleSheet.create({
     },
     creator:{
         margin:5,
-        fontSize:20
+        fontSize:15
     },
     likes:{
         margin:5,
-        fontSize:20
+        fontSize:15
     },
     button:{
         backgroundColor:Colors.light.tint,
