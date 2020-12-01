@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "react-native-spotify-clone",
-    "slug": "react-native-spotify-clone",
+    "name": "Spotify Clone",
+    "slug": "spotify-clone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/spotify-logo.png",
+      "image": "./assets/images/logo-main-screen.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -29,6 +29,8 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": "Spotify let's you listen music online via spotify mobile app (android and IOS). This clone app focuses on UI design and implementing minimal features of Spotify. Enjoy Music! Hope you like it. ",
+    "githubUrl": "https://github.com/arifshariati/react-native-spotify-clone"
   }
 }

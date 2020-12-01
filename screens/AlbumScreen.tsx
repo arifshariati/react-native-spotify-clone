@@ -11,7 +11,6 @@ import { getAlbum } from '../amplify/graphql/queries'
 import SongListItem from '../components/SongListItem'
 
 //mock data
-import albumDetails from '../data/albumDetails';
 import AlbumHeader from '../components/AlbumHeader';
 
 const AlbumScreen = () => {

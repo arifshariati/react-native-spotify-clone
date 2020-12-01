@@ -8,8 +8,7 @@ import { Sound } from 'expo-av/build/Audio/Sound';
 import { Song } from '../../types';
 import styles from './style';
 
-//mock Data
-import AlbumDetails from '../../data/albumDetails';
+
 import Colors from '../../constants/Colors';
 
 import {API, graphqlOperation } from 'aws-amplify'
@@ -17,8 +16,6 @@ import { getSong } from '../../amplify/graphql/queries'
 
 import { AppContext } from '../../AppContext'
 
-
-const song =AlbumDetails.songs[0];
 
 const PlayerWidget = () => {
 
