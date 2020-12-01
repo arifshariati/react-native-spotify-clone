@@ -37,4 +37,4 @@ Though not much fancy UI however, still good to check it out and play around wit
 
 ![home-screen](/screenshots/home-screen.png)
 ![album-screen-english](/screenshots/album-screen-english.png)
-![album-screen-persion](/screenshots/album-screen-persian.png)
+![album-screen-farsi](/screenshots/album-screen-farsi.png)
