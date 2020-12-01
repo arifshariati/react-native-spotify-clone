@@ -6,14 +6,21 @@ import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 
+
+
 //component
 import PlayerWidget from './components/PlayerWidget';
 
-export default function App() {
+
+import Amplify from 'aws-amplify'
+import config from './aws-exports'
+Amplify.configure(config)
+
+const App = () => {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
-  console.log(colorScheme);
+  
 
   if (!isLoadingComplete) {
     return null;
@@ -27,3 +34,5 @@ export default function App() {
     );
   }
 }
+
+export default App;

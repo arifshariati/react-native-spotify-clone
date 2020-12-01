@@ -1,24 +1,49 @@
-import * as React from 'react';
-import { StyleSheet, FlatList } from 'react-native';
+import React, { useState, useEffect} from 'react';
+import { StyleSheet, FlatList, View } from 'react-native';
 
 
 //components
 import AlbumCategory from '../components/AlbumCategory';
 
+import { API, graphqlOperation } from 'aws-amplify'
 
-import { View } from '../components/Themed';
-
+import { listAlbumCategorys } from '../amplify/graphql/queries'
 
 //mock data
-import albumCategories from '../data/albumCategories';
+//import albumCategories from '../data/albumCategories';
 
 
 export default function HomeScreen() {
+
+  const [categories, setCategories] = useState([]);
+
+  useEffect(()=>{
+
+    const fetchAlbumCategories = async () => {
+
+      try{
+
+        const data = await API.graphql(
+          graphqlOperation(
+            listAlbumCategorys
+          )
+        );
+        
+        setCategories(data.data.listAlbumCategorys.items);
+        
+      }
+      catch(error){
+        console.log(error.message);
+      }
+    }
+    fetchAlbumCategories();
+  },[])
+
   return (
     <View style={styles.container}>
       <FlatList 
-        data={albumCategories}
-        renderItem={({item}) => <AlbumCategory title={item.title} albums={item.albums} />}
+        data={categories}
+        renderItem={({item}) => <AlbumCategory title={item.title} albums={item.albums.items} />}
         keyExtractor={(item) => item.id}
       />
     </View>
