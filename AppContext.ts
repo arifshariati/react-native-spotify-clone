@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
 
-const context = {
+type AppContextType = {
+  songId: string | null;
+  setSongId: (id: string) => void;
+};
 
-    songId: null,
-    setSongId: (id:string) =>{}
-}
-
-export const AppContext = React.createContext(context)
+export const AppContext = React.createContext<AppContextType | null>(null);
